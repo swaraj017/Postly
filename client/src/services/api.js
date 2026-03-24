@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://postly-backend.onrender.com/api"
+  baseURL: "https://postly-backend-0rsd.onrender.com/api"
 });
 
 // Attach token automatically
