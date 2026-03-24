@@ -1,26 +1,26 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import API from "../services/api";
-import CreatePost from "../components/CreatePost";
-import PostCard from "../components/PostCard";
 
-export default function Feed() {
-  const [posts, setPosts] = useState([]);
+export default function CreatePost({ refresh }) {
+  const [content, setContent] = useState("");
 
-  const fetchPosts = async () => {
-    const { data } = await API.get("/posts");
-    setPosts(data);
+  const handlePost = async () => {
+    if (!content) return;
+    await API.post("/posts", { content });
+    setContent("");
+    refresh();
   };
 
-  useEffect(() => {
-    fetchPosts();
-  }, []);
-
   return (
-    <div className="container">
-      <CreatePost refresh={fetchPosts} />
-      {posts.map((post) => (
-        <PostCard key={post._id} post={post} refresh={fetchPosts} />
-      ))}
+    <div className="card">
+      <input
+        placeholder="What's on your mind?"
+        value={content}
+        onChange={(e) => setContent(e.target.value)}
+      />
+      <button className="btn" onClick={handlePost}>
+        Post
+      </button>
     </div>
   );
 }
