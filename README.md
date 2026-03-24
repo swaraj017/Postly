@@ -6,7 +6,7 @@ A full-stack social media application where users can create posts, like, and co
 
 ## 🌐 Live Demo
 Frontend: https://postly-beta-lyart.vercel.app/  
-Backend: https://postly-backend.onrender.com  
+Backend: https://postly-backend-0rsd.onrender.com/
 
 ---
 
@@ -55,10 +55,8 @@ Backend: https://postly-backend.onrender.com
 ├── frontend/
 │ ├── components/
 │ ├── pages/
-│ └── services/```
-
-
----
+│ └── services/
+```
 
 ## ⚙️ Installation
 
